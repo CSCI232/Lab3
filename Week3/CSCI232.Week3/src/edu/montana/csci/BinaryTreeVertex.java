@@ -4,6 +4,7 @@ public class BinaryTreeVertex extends Vertex {
 	private BinaryTreeVertex leftChild;
 	private BinaryTreeVertex rightChild;
 	private BinaryTreeVertex parent;
+	
 	public BinaryTreeVertex(int val) {
 		super(val);				
 	}
@@ -32,5 +33,17 @@ public class BinaryTreeVertex extends Vertex {
 		this.parent=p;
 	}
 	
-
+	public int maxLevel(BinaryTreeVertex vertex) {
+		if (vertex==null) {
+			return 0;
+		}
+		return Math.max(maxLevel(vertex.getLeftChild()), maxLevel(vertex.getRightChild())) +1; 
+	}
+	
+	public int levelDifference(BinaryTreeVertex vertex) {
+		if (vertex==null) {
+			return 0;
+		}
+		return (Math.max(maxLevel(vertex.getLeftChild()), maxLevel(vertex.getRightChild())) - Math.min(maxLevel(vertex.getLeftChild()), maxLevel(vertex.getRightChild())));
+	}
 }

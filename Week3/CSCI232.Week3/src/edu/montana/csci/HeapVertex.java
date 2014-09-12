@@ -1,11 +1,17 @@
 package edu.montana.csci;
 
-public class HeapVertex<E> extends BinaryTreeVertex {
+public class HeapVertex extends BinaryTreeVertex {
 	private int heapIndex;
 	
 	
 	public HeapVertex(int val) {
 		super(val);		
+	}
+	
+	public HeapVertex(int val, HeapVertex left, HeapVertex right) {
+		super(val);
+		this.setLeftChild(left);
+		this.setRightChild(right);
 	}
 	
 	public int getHeapIndex() {
@@ -19,4 +25,7 @@ public class HeapVertex<E> extends BinaryTreeVertex {
 	public String toString() {
 		return "("+heapIndex+")"+this.getValue();
 	}
+	
+
+	
 }
