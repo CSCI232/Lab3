@@ -5,7 +5,7 @@ package edu.montana.csci;
  * @author barrionuevo
  */
 public class Vertex {
-    private int vertexVal;
+    protected int vertexVal;
     
     public Vertex(int val){
         this.vertexVal = val;
