@@ -7,7 +7,7 @@ package edu.montana.csci;
 import java.util.ArrayList;
 
 public class Graph {
-    private ArrayList<Vertex> vertices = new ArrayList<>();
+    protected ArrayList<Vertex> vertices = new ArrayList<>();
     private ArrayList<Edge> edges = new ArrayList<>();
     
     public void addVertex(Vertex v) {

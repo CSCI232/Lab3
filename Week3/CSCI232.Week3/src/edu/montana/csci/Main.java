@@ -1,49 +1,25 @@
 package edu.montana.csci;
 
+import java.util.ArrayList;
+
 public class Main {
 
 	public static void main(String[] args) {
 		
+		ArrayList<Integer> listNodes = new ArrayList<Integer>();
+		
+		listNodes.add(7);
+		listNodes.add(2);
+		listNodes.add(8);
+		listNodes.add(5);
+		listNodes.add(4);
 		
 		
-		BinaryTree myTree = new BinaryTree();
-		
-		BinaryTreeVertex v1 = new BinaryTreeVertex(6);
-		BinaryTreeVertex v2 = new BinaryTreeVertex(3);
-		BinaryTreeVertex v3 = new BinaryTreeVertex(7);
-		BinaryTreeVertex v4 = new BinaryTreeVertex(1);
-		BinaryTreeVertex v5 = new BinaryTreeVertex(5);
-		BinaryTreeVertex v6 = new BinaryTreeVertex(4);
-		BinaryTreeVertex v7 = new BinaryTreeVertex(9);
-		BinaryTreeVertex v8 = new BinaryTreeVertex(8);
+	   Heap myHeap = new Heap(listNodes);
+
 		
 		
-		
-		myTree.treeInsert(v8);
-		myTree.treeInsert(v7);
-		myTree.treeInsert(v6);
-		myTree.treeInsert(v5);
-		myTree.treeInsert(v4);
-		//myTree.treeInsert(v4);
-		//myTree.treeInsert(v3);
-		myTree.treeInsert(v1);
-		myTree.treeInsert(v2);
-		
-		
-		System.out.println(myTree.treeSearch(myTree.getRoot(),3 ));
-		myTree.treeDelete(v2);	
-		System.out.println(myTree.iterativeTreeSearch(myTree.getRoot(),3 ));
-		
-	   
-		//myTree.treeDelete(myTree.treeSearch(myTree.getRoot(),3));
-		
-		//myTree.treeDelete(myTree.treeSearch(myTree.getRoot(),3));
-		//myTree.updateEdges();
-		
-		
-		//myTree.treeInsert(v7);
-		
-		Visualizer tree = new Visualizer(myTree);
+		Visualizer tree = new Visualizer(myHeap);
 		
 		tree.treeBuilder();
 		tree.viewGraph();

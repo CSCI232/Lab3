@@ -46,4 +46,5 @@ public class BinaryTreeVertex extends Vertex {
 		}
 		return (Math.max(maxLevel(vertex.getLeftChild()), maxLevel(vertex.getRightChild())) - Math.min(maxLevel(vertex.getLeftChild()), maxLevel(vertex.getRightChild())));
 	}
+
 }

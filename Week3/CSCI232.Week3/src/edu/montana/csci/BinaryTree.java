@@ -1,6 +1,7 @@
 package edu.montana.csci;
 
 public class BinaryTree extends Graph {
+	
 	private BinaryTreeVertex root;
 	
 	public BinaryTree() {
@@ -15,17 +16,20 @@ public class BinaryTree extends Graph {
 		return root;
 	}
 	public void updateEdges() {
-		this.clearEdges();
-		inorderWalk(this.root);
-		
+		clearEdges();
+		inorderWalk(getRoot());		
 	}
 	
 	public void inorderWalk(BinaryTreeVertex x){
-		if (x==null) return;
-		if (x.getParent()!=null)
-			this.addEdge(new Edge(x.getParent(), x));
-		inorderWalk(x.getLeftChild());		
-		inorderWalk(x.getRightChild());		
+		if (x.getLeftChild()!=null) {
+			addEdge(new Edge(x, x.getLeftChild()));
+			inorderWalk(x.getLeftChild());
+		}
+		if (x.getRightChild()!=null) 	 {	
+			addEdge(new Edge(x, x.getRightChild()));
+			inorderWalk(x.getRightChild());			
+		}
+		return;		
 	}
 	
 	public BinaryTreeVertex iterativeTreeSearch(BinaryTreeVertex x, int k){

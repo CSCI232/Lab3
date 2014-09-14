@@ -24,8 +24,9 @@ public class Visualizer {
 	
 	public void treeBuilder () {
 		if (graph instanceof BinaryTree)
-			((BinaryTree) graph).updateEdges();		
-		
+			((BinaryTree) graph).updateEdges();	
+	
+				
 		for (Vertex v : graph.getVertices()) {
 			forest.addVertex(v);
 		}
