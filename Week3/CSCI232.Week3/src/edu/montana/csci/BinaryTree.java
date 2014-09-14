@@ -22,10 +22,12 @@ public class BinaryTree extends Graph {
 	
 	public void inorderWalk(BinaryTreeVertex x){
 		if (x.getLeftChild()!=null) {
+			x.getLeftChild().setParent(x);
 			addEdge(new Edge(x, x.getLeftChild()));
 			inorderWalk(x.getLeftChild());
 		}
-		if (x.getRightChild()!=null) 	 {	
+		if (x.getRightChild()!=null) 	 {
+			x.getLeftChild().setParent(x);
 			addEdge(new Edge(x, x.getRightChild()));
 			inorderWalk(x.getRightChild());			
 		}
