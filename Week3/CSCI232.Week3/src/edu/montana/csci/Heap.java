@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Heap extends BinaryTree{
 		
-	public Heap(ArrayList<Integer> list) {	
-		for (Integer value:list) {
+	public Heap(ArrayList<Integer> listOfIntegers) {	
+		for (Integer value:listOfIntegers) {
 			addVertex(new HeapVertex(value));
 		}
 		
-		buildHeap(list.size());
+		buildHeap(listOfIntegers.size());
 		
 		for (int a=0; a < getVertices().size(); a++) {
 			if ((a*2) + 1 < getVertices().size()) {
